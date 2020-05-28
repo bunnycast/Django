@@ -8,20 +8,20 @@
 </div>
 <div class="row mt-5">
   <div class="col-12">
-    {{ error }}
+    {{ error }} <!--views.py 51line error message-->
   </div>
 </div>
 <div class="row mt-5">
   <div class="col-12">
-    <form method="post" action=".">
-      {% csrf_token %}
+    <form method="POST" action="."> <!--action = '.' 현재 페이지에 post한 내용 요청-->
+      {% csrf_token %} <!--크로스 도메인을 막는 키, Django는 기본값-->
       <div class="form-group">
         <label for="username">사용자 이름</label>
         <input type="text" class="form-control" id="username" placeholder="사용자 이름" name="username">
       </div>
       <div class="form-group">
         <label for="useremail">사용자 email</label>
-        <input type="email" class="form-control" id="useremail" placeholder="test@test.com" name="useremail">
+        <input type="email" class="form-control" id="useremail" placeholder="email@address.com" name="useremail">
       </div>
       <div class="form-group">
         <label for="password">비밀번호</label>

@@ -115,10 +115,10 @@ USE_TZ = True
 
 TIME_ZONE = 'Asia/Seoul'
 
-# Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript, Images), static 파일 관리
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
 ]

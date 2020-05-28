@@ -43,7 +43,6 @@ def register(request):
     re_password = request.POST.get('re-password', None)
 
     res_data = {}
-
     if not (username and useremail and password and re_password):
       res_data['error'] = '모든 값을 입력해야 합니다.'
     
@@ -54,7 +53,7 @@ def register(request):
       fcuser = Fcuser(
         username=username,
         useremail=useremail,
-        password=make_password(password)
+        password=make_password(password) # 비밀번호 암호화 저장 모듈
         )
         
       fcuser.save()
