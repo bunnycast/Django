@@ -12,9 +12,8 @@ def home(request):
 
   if user_id:
     fcuser = Fcuser.objects.get(pk=user_id)
-    return HttpResponse(fcuser.username)
-  
-  return HttpResponse('Home!')
+
+  return render(request, 'home.html')
 
 def logout(request):
   if request.session.get('user'):
@@ -43,8 +42,9 @@ def register(request):
     re_password = request.POST.get('re-password', None)
 
     res_data = {}
+
     if not (username and useremail and password and re_password):
-      res_data['error'] = '모든 값을 입력해야 합니다.'
+      res_data['error'] = '모든 값을 입력해야합니다.'
     
     elif password != re_password:
       res_data['error'] = '비밀번호가 다릅니다.'
